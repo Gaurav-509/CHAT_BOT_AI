@@ -12,15 +12,15 @@ const ChatMessage = ({
   prompt,
   loading,
 }: Message & { loading?: boolean }) => {
-  const contextItems = [
-    { title: 'Copy', systemIcon: 'doc.on.doc', action: () => copyImageToClipboard(imageUrl!) },
-    {
-      title: 'Save to Photos',
-      systemIcon: 'arrow.down.to.line',
-      action: () => downloadAndSaveImage(imageUrl!),
-    },
-    { title: 'Share', systemIcon: 'square.and.arrow.up', action: () => shareImage(imageUrl!) },
-  ];
+  // const contextItems = [
+  //   { title: 'Copy', systemIcon: 'doc.on.doc', action: () => copyImageToClipboard(imageUrl!) },
+  //   {
+  //     title: 'Save to Photos',
+  //     systemIcon: 'arrow.down.to.line',
+  //     action: () => downloadAndSaveImage(imageUrl!),
+  //   },
+  //   { title: 'Share', systemIcon: 'square.and.arrow.up', action: () => shareImage(imageUrl!) },
+  // ];
 
   return (
     <View style={styles.row}>
@@ -32,7 +32,7 @@ const ChatMessage = ({
         <Image source={{ uri: 'https://galaxies.dev/img/meerkat_2.jpg' }} style={styles.avatar} />
       )}
 
-      {loading ? (
+      {/* {loading ? (
         <View style={styles.loading}>
           <ActivityIndicator color={Colors.primary} size="small" />
         </View>
@@ -42,9 +42,7 @@ const ChatMessage = ({
             <ContextMenu.Root>
               <ContextMenu.Trigger>
                 <Link
-                  href={`/(auth)/(modal)/image/${encodeURIComponent(
-                    imageUrl
-                  )}?prompt=${encodeURIComponent(prompt!)}`}
+                  href={``}
                   asChild>
                   <Pressable>
                     <Image source={{ uri: imageUrl }} style={styles.previewImage} />
@@ -69,7 +67,7 @@ const ChatMessage = ({
             <Text style={styles.text}>{content}</Text>
           )}
         </>
-      )}
+      )} */}
     </View>
   );
 };
